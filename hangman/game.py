@@ -27,5 +27,8 @@ def apply_guess(state: dict, ch: str) -> bool:
         return False
 # print(apply_guess({"grt":25, "secret": "a"}, "a"))
 
+def is_won(state: dict) -> bool:
 
-
+    if "_" not in state["display"]:
+        return True
+    
