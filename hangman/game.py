@@ -42,3 +42,5 @@ def render_display(state: dict) -> str:
     return state["display"]
 # print(render_display({"display":"Hello"}))
 
+def render_summary(state: dict) -> str:
+    return state["secret"], state["gussed"]
