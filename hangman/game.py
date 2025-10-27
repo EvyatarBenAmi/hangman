@@ -1,4 +1,4 @@
-def init_state(secret: str, max_tries: int) -> str:
+def init_state(secret: str, max_tries: int) -> dict:
     play_data = { 
                 "secret": secret,
                 "display": [" _" * len(secret)],
@@ -8,4 +8,3 @@ def init_state(secret: str, max_tries: int) -> str:
                 }
     return play_data
 # print(init_state("stav", 5))
-
