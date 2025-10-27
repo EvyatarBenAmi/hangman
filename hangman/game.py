@@ -32,3 +32,8 @@ def is_won(state: dict) -> bool:
     if "_" not in state["display"]:
         return True
     
+def is_lost(state: dict) -> bool:
+
+    if state["wrong_guesses"] >= state["max_tries"]:
+        return True
+    
