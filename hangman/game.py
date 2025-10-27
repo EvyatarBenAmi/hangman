@@ -1,12 +1,12 @@
-# def init_state(secret: str, max_tries: int) -> dict:
-#     play_data = { 
-#                 "secret": secret,
-#                 "display": [" _" * len(secret)],
-#                 "guessed": set(),
-#                 "wrong_guesses": 0,
-#                 "max_tries": max_tries
-#                 }
-#     return play_data
+def init_state(secret: str, max_tries: int) -> dict:
+    play_data = { 
+                "secret": secret,
+                "display": [" _" * len(secret)],
+                "guessed": set(),
+                "wrong_guesses": 0,
+                "max_tries": max_tries
+                }
+    return play_data
 # print(init_state("stav", 5))
 
 def validate_guess(ch: str, guessed:set[str]) -> tuple[bool, str]:
@@ -19,3 +19,13 @@ def validate_guess(ch: str, guessed:set[str]) -> tuple[bool, str]:
     else:
         return False , " invalid character was received."
 # print(validate_guess("4",{"k"}))
+
+def apply_guess(state: dict, ch: str) -> bool:
+    if ch in state["secret"]:
+        return True
+    else:
+        return False
+# print(apply_guess({"grt":25, "secret": "a"}, "a"))
+
+
+
