@@ -1,6 +1,6 @@
 def init_state(secret: str, max_tries: int) -> dict:
     play_data = { 
-                "secret": secret,
+                "secret": secret,                
                 "display": [" _" * len(secret)],
                 "guessed": set(),
                 "wrong_guesses": 0,
@@ -25,6 +25,7 @@ def apply_guess(state: dict, ch: str) -> bool:
         return True
     else:
         return False
+# אופציונלי להוסיף פה המשך פעולות בהסתמך תשובה מתקבלת
 # print(apply_guess({"grt":25, "secret": "a"}, "a"))
 
 def is_won(state: dict) -> bool:
@@ -37,3 +38,7 @@ def is_lost(state: dict) -> bool:
     if state["wrong_guesses"] >= state["max_tries"]:
         return True
     
+def render_display(state: dict) -> str:
+    return state["display"]
+# print(render_display({"display":"Hello"}))
+
